@@ -46,7 +46,7 @@
       case 'hex':
         return rgb2hex(this.r, this.g, this.b);
       case 'rgb':
-        return "rgb(" + [this.r, this.g, this.b].join(", ") + ")";
+        return "rgb(" + [this.r, this.g, this.b].map(Math.round).join(", ") + ")";
       default:
         throw new Error("Unrecognized color format: " + format);
     }
