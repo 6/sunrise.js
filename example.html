@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sunrise.js</title>
+  <meta charset="utf-8">
+  <script src="sunrise.js"></script>
+</head>
+<body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var colors = sunrise("#f0f", "rgb(0,255,90)").generate(5).format('hex');
+    console.log(colors);
+  });
+</script>
+</body>
+</html>
