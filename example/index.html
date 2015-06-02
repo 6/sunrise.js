@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sunrise.js</title>
+  <meta charset="utf-8">
+  <script src="../sunrise.js"></script>
+  <link rel="stylesheet" href="example.css">
+</head>
+<body>
+  <h1>sunrise.js</h1>
+
+  <div class="example">
+    <code class="js">sunrise("#ff0000", "#ffff00").generate(10).format('hex');</code>
+  </div>
+
+  <div class="example">
+    <code class="js">sunrise("#f0f", "rgb(0,255,90)").generate(5).format('rgb');</code>
+  </div>
+
+  <div class="example">
+    <code class="js">sunrise("f00", "ff0").scale(0.75).format('rgb');</code>
+  </div>
+
+  <div class="example">
+    <code class="js">var customScale = function(value1, value2, position) {
+  if(position < 0.5)
+    return Math.random() * 100;
+  else
+    return (Math.random() * 80) + 175;
+};
+
+sunrise("f00", "ff0", {scaleFunction: customScale}).generate(10).format('hex');</code>
+  </div>
+
+<script>
+  var displayOutput = function(el, colors) {
+    if (!Array.isArray(colors))
+      colors = [colors];
+    var colorsHTML = colors.map(function(color) {
+      return "<div class='color' style='background-color: " + color + "'></div>";
+    }).join("");
+    colorsHTML = "<div class='colors'>" + colorsHTML + "</div>";
+    var jsOutput = '<code class="js-output">["' + colors.join('", "') + '"]</code>';
+    el.innerHTML += jsOutput + colorsHTML;
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var examples = document.querySelectorAll('.example');
+    Array.prototype.forEach.call(examples, function(example) {
+      var code = example.querySelector("code").innerHTML.replace("&gt;", ">").replace("&lt;", "<");
+      var colors = eval(code);
+      displayOutput(example, colors);
+    });
+  });
+</script>
+</body>
+</html>

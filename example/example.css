@@ -1,0 +1,40 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  padding: 48px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+  font-weight: bold;
+  font-size: 22px;
+  padding-bottom: 12px;
+}
+.example {
+  padding: 36px 0;
+}
+.example .color {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+}
+.example code {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+}
+.example .js {
+  font-size: 15px;
+  padding-bottom: 12px;
+}
+.example .js-output {
+  font-size: 13px;
+  padding-bottom: 16px;
+  color: #888;
+}
