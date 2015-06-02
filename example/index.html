@@ -10,11 +10,11 @@
   <h1>sunrise.js</h1>
 
   <div class="example">
-    <code class="js">sunrise("#ff0000", "#ffff00").generate(10).format('hex');</code>
+    <code class="js">sunrise("#aa00aa", "#ffee00").generate(10).format('hex');</code>
   </div>
 
   <div class="example">
-    <code class="js">sunrise("#f0f", "rgb(0,255,90)").generate(5).format('rgb');</code>
+    <code class="js">sunrise("#0fa", "rgb(244,155,229)").generate(6).format('rgb');</code>
   </div>
 
   <div class="example">
@@ -23,6 +23,13 @@
   sunrise("f00", "ff0").scale(0.5).format('rgb'),
   sunrise("f00", "ff0").scale(0.9).format('rgb')
 ];</code>
+  </div>
+
+  <div class="example">
+    <code class="js">var easeIn = function(n) {
+  return Math.pow(n, 3);
+};
+sunrise("rgb(140, 223, 82)", "rgb(18, 74, 94)", {scaleFunction: easeIn}).generate(10).format('rgb');</code>
   </div>
 
 <script>
