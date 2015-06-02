@@ -28,6 +28,7 @@ h1 {
   display: block;
   font-family: monospace;
   white-space: pre;
+  word-wrap: break-word;
 }
 .example .js {
   font-size: 15px;
