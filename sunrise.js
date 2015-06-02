@@ -21,7 +21,7 @@
   Sunrise.prototype.generate = function(n) {
     var colors = [];
     for(var i = 0; i < n; i ++) {
-      var position = ((n - 1) * i) / Math.pow(n - 1, 2);
+      var position = i / (n - 1);
       colors.push(this.scale(position));
     }
     return new Colors(colors);
