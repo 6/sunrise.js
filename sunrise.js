@@ -1,6 +1,7 @@
 (function(global) {
   var REGEX_HEX = /^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/,
       REGEX_RGB = /rgb\(\s*(\-?\d+),\s*(\-?\d+)\s*,\s*(\-?\d+)\s*\)/;
+
   var Sunrise = function(color1, color2, options) {
     options = options || {};
     this.color1 = parseColorString(color1);
@@ -12,7 +13,7 @@
     var color = new Color();
     position = this.scaleFunction(position);
     ["r", "g", "b"].forEach(function(channel) {
-      color[channel] = this.color1[channel] + ((this.color2[channel] - this.color1[channel]) *position);
+      color[channel] = this.color1[channel] + ((this.color2[channel] - this.color1[channel]) * position);
     }, this);
     return color;
   };
