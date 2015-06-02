@@ -21,17 +21,6 @@
     <code class="js">sunrise("f00", "ff0").scale(0.75).format('rgb');</code>
   </div>
 
-  <div class="example">
-    <code class="js">var customScale = function(value1, value2, position) {
-  if(position < 0.5)
-    return Math.random() * 100;
-  else
-    return (Math.random() * 80) + 175;
-};
-
-sunrise("f00", "ff0", {scaleFunction: customScale}).generate(10).format('hex');</code>
-  </div>
-
 <script>
   var displayOutput = function(el, colors) {
     if (!Array.isArray(colors))
