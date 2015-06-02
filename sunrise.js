@@ -5,13 +5,14 @@
     options = options || {};
     this.color1 = parseColorString(color1);
     this.color2 = parseColorString(color2);
-    this.scaleFunction = options.scaleFunction || linearScale;
+    this.scaleFunction = options.scaleFunction || function(n) { return n; };
   };
 
   Sunrise.prototype.scale = function(position) {
     var color = new Color();
+    position = this.scaleFunction(position);
     ["r", "g", "b"].forEach(function(channel) {
-      color[channel] = this.scaleFunction(this.color1[channel], this.color2[channel], position);
+      color[channel] = this.color1[channel] + ((this.color2[channel] - this.color1[channel]) *position);
     }, this);
     return color;
   };
@@ -50,10 +51,6 @@
       default:
         throw new Error("Unrecognized color format: " + format);
     }
-  };
-
-  var linearScale = function(value1, value2, position) {
-    return value1 + ((value2 - value1) * position);
   };
 
   var parseColorString = function(str) {
