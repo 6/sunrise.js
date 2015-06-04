@@ -2,7 +2,7 @@ var sunrise = require("../sunrise");
 
 describe("sunrise", function() {
   describe("#format", function() {
-    it("generates hex colors correctly", function() {
+    it("returns colors in hex format", function() {
       expect(sunrise("#ff0000", "#abc").generate(3).format("hex")).toEqual([
         "#ff0000",
         "#d45d66",
@@ -10,7 +10,7 @@ describe("sunrise", function() {
       ]);
     });
 
-    it("generates RGB colors correctly", function() {
+    it("returns colors in RGB format", function() {
       expect(sunrise("rgb(140, 223, 82)", "rgb(18, 74, 94)").generate(4).format("rgb")).toEqual([
         'rgb(140, 223, 82)',
         'rgb(99, 173, 86)',
@@ -20,7 +20,7 @@ describe("sunrise", function() {
     });
 
     describe("with an invalid format", function() {
-      it("raises an error", function() {
+      it("throws an error", function() {
         expect(function() { sunrise("#123", "#234").generate(5).format('invalid') }).toThrowError("Unrecognized color format: invalid");
       });
     });
