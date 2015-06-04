@@ -83,7 +83,12 @@
     return [r, g, b];
   };
 
-  global.sunrise = function(color1, color2, options) {
+  var sunrise = function(color1, color2, options) {
     return new Sunrise(color1, color2, options);
   };
+
+  if (typeof module !== 'undefined' && module.exports)
+    module.exports = sunrise;
+  else
+    global.sunrise = sunrise;
 })(this);
