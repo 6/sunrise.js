@@ -41,4 +41,13 @@ describe("sunrise", function() {
       expect(gradient.scale(0.25).format('rgb')).toEqual("rgb(64, 64, 64)");
     });
   });
+
+  describe("color string parsing", function() {
+    describe("with invalid color formats", function() {
+      it("throws an error", function() {
+        expect(function() { sunrise("#zzz", "#000") }).toThrowError("Unrecognized color: #zzz");
+        expect(function() { sunrise("rgb(100,100)", "#000") }).toThrowError("Unrecognized color: rgb(100,100)");
+      });
+    });
+  });
 });
