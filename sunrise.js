@@ -24,17 +24,13 @@
       var position = i / (n - 1);
       colors.push(this.scale(position));
     }
-    return new Colors(colors);
-  };
-
-  var Colors = function(colors) {
-    this.colors = colors;
-  }
-
-  Colors.prototype.format = function(format) {
-    return this.colors.map(function(color) {
-      return color.format(format);
-    });
+    return {
+      format: function(format) {
+        return colors.map(function(color) {
+          return color.format(format);
+        });
+      }
+    };
   };
 
   var Color = function(r, g, b) {
