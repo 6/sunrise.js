@@ -25,6 +25,7 @@
       colors.push(this.scale(position));
     }
     return {
+      colors: colors,
       format: function(format) {
         return colors.map(function(color) {
           return color.format(format);
