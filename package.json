@@ -1,0 +1,25 @@
+{
+  "name": "sunrise.js",
+  "version": "1.0.0",
+  "description": "simple color gradient generator",
+  "main": "sunrise.js",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6/sunrise.js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/6/sunrise.js/issues"
+  },
+  "homepage": "https://github.com/6/sunrise.js#readme"
+}
